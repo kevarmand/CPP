@@ -1,0 +1,75 @@
+ADD
+Fabien
+Barthez
+LeMoine
+0600000091
+cache un bonnet porte-bonheur
+ADD
+Lilian
+Thuram
+Mur90
+0600000092
+ne change jamais de crampons après une victoire
+ADD
+Marcel
+Desailly
+Marechal
+0600000093
+parle à ses poteaux avant chaque mi-temps
+ADD
+Frank
+Leboeuf
+Prof
+0600000094
+récite une réplique de théâtre avant le coup d’envoi
+SEARCH
+9
+ADD
+Bixente
+Lizarazu
+LameBasque
+0600000095
+mange une part de gâteau basque avant les matchs
+ADD
+Didier
+Deschamps
+CapitaineDD
+0600000096
+compte ses lacets (double-nœud obligatoire)
+Invalid
+ADD
+Emmanuel
+Petit
+QueueDeCheval
+0600000097
+glisse une pièce dans la chaussette gauche
+ADD
+Christian
+Karembeu
+Totem
+0600000098
+garde un coquillage fétiche dans le sac
+ADD
+Zinedine
+Zidane
+Zizou
+0600000099
+porte toujours le short une taille au-dessus
+ADD
+Youri
+Djorkaeff
+LeSnake
+0600000100
+fait un clin d’œil au caméraman n°3
+SEARCH
+1
+ADD
+Stephane
+Guivarc h
+GuivMagic
+0600000101
+écoute du biniou en cachette
+SEARCH
+3
+Invalid
+EXIT
