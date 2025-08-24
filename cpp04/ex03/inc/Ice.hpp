@@ -1,34 +1,34 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Brain.hpp                                          :+:      :+:    :+:   */
+/*   Ice.hpp                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: kearmand <kearmand@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/08/23 22:58:54 by kearmand          #+#    #+#             */
-/*   Updated: 2025/08/24 14:58:26 by kearmand         ###   ########.fr       */
+/*   Created: 2025/08/24 16:32:00 by kearmand          #+#    #+#             */
+/*   Updated: 2025/08/24 17:38:15 by kearmand         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef BRAIN_HPP
-#define BRAIN_HPP
+#ifndef ICE_HPP
+#define ICE_HPP
 
-#include <string>
+#include "AMateria.hpp"
+#include "ICharacter.hpp"
 #include "color.hpp"
 
-class Brain {
+class Ice : public AMateria {
 public:
-	Brain();
-	Brain(const Brain& other);
-	Brain& operator=(const Brain& other);
-	~Brain();
+	Ice();
+	Ice(const Ice& other);
+	Ice& operator=(const Ice& other);
+	~Ice();
 
-	std::string getIdea(int index) const;
-	void setIdea(int index, const std::string& idea);
+	AMateria* clone() const;
+	void use(ICharacter& target);
 
 private:
 	// membres privés
-	std::string _ideas[100];
 };
 
-#endif // BRAIN_HPP
+#endif // ICE_HPP

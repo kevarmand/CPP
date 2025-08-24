@@ -6,7 +6,7 @@
 /*   By: kearmand <kearmand@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/23 21:14:30 by kearmand          #+#    #+#             */
-/*   Updated: 2025/08/24 15:01:27 by kearmand         ###   ########.fr       */
+/*   Updated: 2025/08/24 15:14:46 by kearmand         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,13 +15,13 @@
 
 const std::string Cat::emoji = "🐱  ";
 
-Cat::Cat() : Animal("Cat"), _brain(new Brain()) {
+Cat::Cat() : AAnimal("Cat"), _brain(new Brain()) {
 	std::cout << Cat::emoji
 		<< BOLD GREEN "Cat created: " RESET ORANGE
 		<< _type << RESET << std::endl;
 }
 
-Cat::Cat(const Cat& other) : Animal(other), _brain(new Brain(*other._brain)) {
+Cat::Cat(const Cat& other) : AAnimal(other), _brain(new Brain(*other._brain)) {
 	std::cout << Cat::emoji
 		<< BOLD GREEN "Cat copied: " RESET ORANGE
 		<< _type << RESET << std::endl;
@@ -29,7 +29,7 @@ Cat::Cat(const Cat& other) : Animal(other), _brain(new Brain(*other._brain)) {
 
 Cat& Cat::operator=(const Cat& other) {
 	if (this != &other) {
-		Animal::operator=(other);
+		AAnimal::operator=(other);
 		*_brain = *other._brain;
 		std::cout << Cat::emoji
 			<< BOLD GREEN "Cat assigned: " RESET ORANGE

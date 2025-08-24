@@ -1,34 +1,35 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Brain.hpp                                          :+:      :+:    :+:   */
+/*   MateriaSource.hpp                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: kearmand <kearmand@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/08/23 22:58:54 by kearmand          #+#    #+#             */
-/*   Updated: 2025/08/24 14:58:26 by kearmand         ###   ########.fr       */
+/*   Created: 2025/08/24 17:18:16 by kearmand          #+#    #+#             */
+/*   Updated: 2025/08/24 17:20:54 by kearmand         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef BRAIN_HPP
-#define BRAIN_HPP
+#ifndef MATERIASOURCE_HPP
+#define MATERIASOURCE_HPP
 
-#include <string>
+#include "AMateria.hpp"
+#include "IMateriaSource.hpp"
 #include "color.hpp"
 
-class Brain {
+class MateriaSource : public IMateriaSource {
 public:
-	Brain();
-	Brain(const Brain& other);
-	Brain& operator=(const Brain& other);
-	~Brain();
+	MateriaSource();
+	MateriaSource(const MateriaSource& other);
+	MateriaSource& operator=(const MateriaSource& other);
+	~MateriaSource();
 
-	std::string getIdea(int index) const;
-	void setIdea(int index, const std::string& idea);
+	void learnMateria(AMateria* m);
+	AMateria* createMateria(std::string const & type);
 
 private:
-	// membres privés
-	std::string _ideas[100];
+	AMateria* materias[4];
+	int materiaCount;
 };
 
-#endif // BRAIN_HPP
+#endif // MATERIASOURCE_HPP

@@ -1,34 +1,35 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Brain.hpp                                          :+:      :+:    :+:   */
+/*   AAnimal.hpp                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: kearmand <kearmand@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/08/23 22:58:54 by kearmand          #+#    #+#             */
-/*   Updated: 2025/08/24 14:58:26 by kearmand         ###   ########.fr       */
+/*   Created: 2025/08/23 21:08:47 by kearmand          #+#    #+#             */
+/*   Updated: 2025/08/24 15:12:24 by kearmand         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef BRAIN_HPP
-#define BRAIN_HPP
+#ifndef AAnimal_HPP
+#define AAnimal_HPP
 
 #include <string>
+
 #include "color.hpp"
 
-class Brain {
+class AAnimal {
 public:
-	Brain();
-	Brain(const Brain& other);
-	Brain& operator=(const Brain& other);
-	~Brain();
+	AAnimal(const std::string& type = "AAnimal");
+	AAnimal(const AAnimal& other);
+	AAnimal& operator=(const AAnimal& other);
+	virtual ~AAnimal();
 
-	std::string getIdea(int index) const;
-	void setIdea(int index, const std::string& idea);
+	virtual void makeSound() const = 0;
 
-private:
-	// membres privés
-	std::string _ideas[100];
+	static const std::string emoji;
+protected:
+	std::string _type;
+
 };
 
-#endif // BRAIN_HPP
+#endif // AAnimal_HPP

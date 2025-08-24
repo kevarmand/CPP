@@ -6,7 +6,7 @@
 /*   By: kearmand <kearmand@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/23 22:08:56 by kearmand          #+#    #+#             */
-/*   Updated: 2025/08/24 15:01:34 by kearmand         ###   ########.fr       */
+/*   Updated: 2025/08/24 15:14:46 by kearmand         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,13 +15,13 @@
 
 const std::string Dog::emoji = "🐕  ";
 
-Dog::Dog() : Animal("Dog"), _brain(new Brain()) {
+Dog::Dog() : AAnimal("Dog"), _brain(new Brain()) {
 	std::cout << Dog::emoji
 		<< BOLD GREEN "Dog created: " RESET BLUE
 		<< _type << RESET << std::endl;
 }
 
-Dog::Dog(const Dog& other) : Animal(other), _brain(new Brain(*other._brain)) {
+Dog::Dog(const Dog& other) : AAnimal(other), _brain(new Brain(*other._brain)) {
 	std::cout << Dog::emoji
 		<< BOLD GREEN "Dog copied: " RESET BLUE
 		<< _type << RESET << std::endl;
@@ -29,7 +29,7 @@ Dog::Dog(const Dog& other) : Animal(other), _brain(new Brain(*other._brain)) {
 
 Dog& Dog::operator=(const Dog& other) {
 	if (this != &other) {
-		Animal::operator=(other);
+		AAnimal::operator=(other);
 		*_brain = *other._brain;
 		std::cout << Dog::emoji
 			<< BOLD GREEN "Dog assigned: " RESET BLUE

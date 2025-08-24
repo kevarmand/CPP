@@ -47,10 +47,11 @@ ITALIC		:=	\033[3m
 
 # SOURCES #
 SRCS =		main.cpp	\
-			Animal.cpp	\
-			Cat.cpp		\
-			Dog.cpp		\
-			Brain.cpp	\
+			AMateria.cpp	\
+			Character.cpp	\
+			Cure.cpp		\
+			Ice.cpp			\
+			MaterialSource.cpp
 
 
 # **************************************************************************** #

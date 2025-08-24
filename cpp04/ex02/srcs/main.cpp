@@ -6,11 +6,11 @@
 /*   By: kearmand <kearmand@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/23 21:41:46 by kearmand          #+#    #+#             */
-/*   Updated: 2025/08/24 15:08:13 by kearmand         ###   ########.fr       */
+/*   Updated: 2025/08/24 15:19:03 by kearmand         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Animal.hpp"
+#include "AAnimal.hpp"
 #include "Cat.hpp"
 #include "Dog.hpp"
 #include <iostream>
@@ -18,28 +18,28 @@
 int main() {
 	std::cout << CLEAR;
 	
-	std::cout << BOLD CYAN "--- Animal Creation ---" RESET 
-			<< GREY " Animal* animals[10];" RESET << std::endl;
-	Animal* animals[10];
+	std::cout << BOLD CYAN "--- AAnimal Creation ---" RESET 
+			<< GREY " AAnimal* AAnimals[10];" RESET << std::endl;
+	AAnimal* AAnimals[10];
 
 	std::cout << BOLD CYAN "--- Filling the array with Dogs and Cats ---" RESET 
 			<< GREY " for (int i = 0; i < 10; i++) { ... }" RESET << std::endl;
 	for (int i = 0; i < 10; i++) {
 		if (i % 2 == 0)
-			animals[i] = new Dog();
+			AAnimals[i] = new Dog();
 		else
-			animals[i] = new Cat();
+			AAnimals[i] = new Cat();
 	}
 	std::cout << BOLD CYAN "--- Making sounds ---" RESET 
 			<< GREY " for (int i = 0; i < 10; i++) { ... }" RESET << std::endl;
 	for (int i = 0; i < 10; i++) {
-		animals[i]->makeSound();
+		AAnimals[i]->makeSound();
 	}
 
-	std::cout << BOLD CYAN "--- Deleting Animals ---" RESET 
+	std::cout << BOLD CYAN "--- Deleting AAnimals ---" RESET 
 			<< GREY " for (int i = 0; i < 10; i++) { ... }" RESET << std::endl;
 	for (int i = 0; i < 10; i++) {
-		delete animals[i];
+		delete AAnimals[i];
 	}
 
 	std::cout << std::endl << BOLD CYAN "--- Deep Copy Test ---" RESET << std::endl;
@@ -72,5 +72,8 @@ int main() {
 	dog2.getIdea(0);
 	std::cout << std::endl;
 
+	// Testing abstract class instantiation
+	// AAnimal* meta = new AAnimal();
+	// delete meta;
 	return 0;
 }

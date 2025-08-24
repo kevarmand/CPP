@@ -1,34 +1,38 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Brain.hpp                                          :+:      :+:    :+:   */
+/*   Cat.hpp                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: kearmand <kearmand@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/08/23 22:58:54 by kearmand          #+#    #+#             */
-/*   Updated: 2025/08/24 14:58:26 by kearmand         ###   ########.fr       */
+/*   Created: 2025/08/23 21:07:45 by kearmand          #+#    #+#             */
+/*   Updated: 2025/08/24 15:14:46 by kearmand         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef BRAIN_HPP
-#define BRAIN_HPP
+#ifndef CAT_HPP
+#define CAT_HPP
 
+#include "AAnimal.hpp"
 #include <string>
 #include "color.hpp"
+#include "Brain.hpp"
 
-class Brain {
+class Cat : public AAnimal {
 public:
-	Brain();
-	Brain(const Brain& other);
-	Brain& operator=(const Brain& other);
-	~Brain();
+	Cat();
+	Cat(const Cat& other);
+	Cat& operator=(const Cat& other);
+	~Cat();
 
-	std::string getIdea(int index) const;
+	void makeSound() const;
+	static const std::string emoji;
+
 	void setIdea(int index, const std::string& idea);
+	void getIdea(int index) const;
 
 private:
-	// membres privés
-	std::string _ideas[100];
+	Brain* _brain;
 };
 
-#endif // BRAIN_HPP
+#endif // CAT_HPP
