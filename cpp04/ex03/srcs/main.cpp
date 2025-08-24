@@ -6,7 +6,7 @@
 /*   By: kearmand <kearmand@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/24 17:52:59 by kearmand          #+#    #+#             */
-/*   Updated: 2025/08/24 18:28:21 by kearmand         ###   ########.fr       */
+/*   Updated: 2025/08/24 19:49:29 by kearmand         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,39 +15,36 @@
 #include "ICharacter.hpp"
 #include "Character.hpp"
 #include "Ice.hpp"
+#include "Chaos.hpp"
+#include "Fire.hpp"
+#include "Earth.hpp"
+#include "Lightning.hpp"
 #include "Cure.hpp"
 #include "color.hpp"
 
 
+inline void wait_enter(const char* msg = "\n[Press Enter to continue] ") {
+	std::cout << msg << std::flush;
+	std::string dump;
+	std::getline(std::cin, dump);
+	std::cout << CLEAR;
+}
+
 int main()
 {
-	IMateriaSource* src = new MateriaSource();
-	src->learnMateria(new Ice());
-	src->learnMateria(new Cure());
-	src->learnMateria(new Ice());
-	src->learnMateria(new Cure());
-	src->learnMateria(new Ice());
-	src->learnMateria(new Cure());
-	src->learnMateria(new Ice());
-	src->learnMateria(new Cure());
+	{
+		//Scope test MateriaSource
 
+		IMateriaSource* src = new MateriaSource();
+		src->learnMateria(new Ice());
+		src->learnMateria(new Cure());
+		src->learnMateria(new Fire());
+		src->learnMateria(new Earth());
+		src->learnMateria(new Lightning()); // Should not be learned, inventory full
+		
+		delete src;
+	}
+	wait_enter();
 	
-	ICharacter* me = new Character("me");
-	AMateria* tmp;
-	tmp = src->createMateria("ice");
-	me->equip(tmp);
-	tmp = src->createMateria("cure");
-	std::cout << me->getName();
-	me->equip(tmp);
-	ICharacter* bob = new Character("bob");
-	me->use(0, *bob);
-	me->use(1, *bob);
-	tmp = src->createMateria("cure");
-	bob->equip(tmp);
-	bob->use(0, *me);
-	bob->unequip(0);
-	delete bob;
-	delete me;
-	delete src;
 	return 0;
 }

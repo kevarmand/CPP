@@ -6,7 +6,7 @@
 /*   By: kearmand <kearmand@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/24 18:02:06 by kearmand          #+#    #+#             */
-/*   Updated: 2025/08/24 18:02:33 by kearmand         ###   ########.fr       */
+/*   Updated: 2025/08/24 19:34:48 by kearmand         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,6 +40,6 @@ AMateria* Cure::clone() const {
 
 
 void Cure::use(ICharacter& target) {
-	std::cout << "* heals " << target.getName() << "'s wounds *" << std::endl;
+	std::cout << "*"  BOLD GREEN " heals " RESET << target.getName() << "'s wounds *" << std::endl;
 }
 

@@ -6,7 +6,7 @@
 /*   By: kearmand <kearmand@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/23 21:05:13 by kearmand          #+#    #+#             */
-/*   Updated: 2025/08/23 21:52:07 by kearmand         ###   ########.fr       */
+/*   Updated: 2025/08/24 19:35:20 by kearmand         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,6 +41,8 @@
 # define BOLDMAGENTA	"\033[1m\033[35m"		/* Bold Magenta */
 # define BOLDCYAN		"\033[1m\033[36m"		/* Bold Cyan */
 # define BOLDWHITE		"\033[1m\033[37m"		/* Bold White */
+
+#define FIRE_CLR   "\033[38;5;202m" 
 
 #define BLUE_SOFT     "\033[38;2;120;170;255m"
 #define BOLD_BLUE_SOFT "\033[1m\033[38;2;120;170;255m"

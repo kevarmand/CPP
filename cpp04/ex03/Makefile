@@ -49,10 +49,13 @@ ITALIC		:=	\033[3m
 SRCS =		main.cpp	\
 			AMateria.cpp	\
 			Character.cpp	\
+			MateriaSource.cpp	\
 			Cure.cpp		\
 			Ice.cpp			\
-			MaterialSource.cpp
-
+			Chaos.cpp	\
+			Fire.cpp	\
+			Earth.cpp	\
+			Lightning.cpp
 
 # **************************************************************************** #
 #                                    OBJECTS                                   #
