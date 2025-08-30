@@ -6,7 +6,7 @@
 /*   By: kearmand <kearmand@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/21 10:31:00 by kearmand          #+#    #+#             */
-/*   Updated: 2025/08/22 12:16:09 by kearmand         ###   ########.fr       */
+/*   Updated: 2025/08/28 08:22:39 by kearmand         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,10 +50,12 @@ void PhoneBook::add() {
 
 	if (!tmp.fillFromInput()) {
 		std::cout << RED << "Failed to add contact.\n" << RESET;
+		std::cin.clear();
 		return;
 	}
 	_contacts[_currentIndex] = tmp;
-	if (_totalContacts < MAX_CONTACTS) ++_totalContacts;
+	if (_totalContacts < MAX_CONTACTS)
+		++_totalContacts;
 	_currentIndex = (_currentIndex + 1) % MAX_CONTACTS;
 	std::cout << BOLDGREEN << "Contact saved.\n" << RESET;
 }

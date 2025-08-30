@@ -6,7 +6,7 @@
 /*   By: kearmand <kearmand@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/23 14:12:22 by kearmand          #+#    #+#             */
-/*   Updated: 2025/08/23 18:37:56 by kearmand         ###   ########.fr       */
+/*   Updated: 2025/08/28 15:05:55 by kearmand         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,6 +46,8 @@ int main() {
 	claptrap.attack("target_final");
 	claptrap.takeDamage(15);
 	claptrap.guardGate();
+	claptrap.takeDamage(15);
+	
 
 	std::cout << std::endl << BOLDCYAN "TEST des limites de vie " RESET << std::endl;
 	claptrap.takeDamage(200);

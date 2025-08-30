@@ -1,31 +1,39 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ReplacerAlgorithm.hpp                              :+:      :+:    :+:   */
+/*   Replace.hpp                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: kearmand <kearmand@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/08/22 20:27:09 by kearmand          #+#    #+#             */
-/*   Updated: 2025/08/22 20:31:53 by kearmand         ###   ########.fr       */
+/*   Created: 2025/08/28 11:06:59 by kearmand          #+#    #+#             */
+/*   Updated: 2025/08/28 17:37:14 by kearmand         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef REPLACER_ALGORITHM_HPP
-#define REPLACER_ALGORITHM_HPP
+#ifndef REPLACE_HPP
+#define REPLACE_HPP
 
 #include <string>
-#include <cstddef>
-#include <iosfwd> // std::ostream
+#include <fstream>
 
-class ReplacerAlgorithm {
+
+class Replace {
 public:
-	ReplacerAlgorithm(const std::string& s1, const std::string& s2);
-	void process(std::string& window, std::ostream& out, std::size_t keep_suffix);
-	void flush(std::string& window, std::ostream& out);
+	Replace(const std::string& filename,
+		const std::string& needle, const std::string& replacement);
+	~Replace();
+	
+	bool	run();
 
 private:
-	std::string _s1;
-	std::string _s2;
+	static const int	BUFFER_SIZE = 65536; // 64KB
+
+	const std::string		_needle;
+	const std::string		_replacement;
+	std::ifstream	_inputFile;
+	std::ofstream	_outputFile;
+	bool 			_ok;
+
 };
 
-#endif // REPLACER_ALGORITHM_HPP
+#endif // REPLACE_HPP

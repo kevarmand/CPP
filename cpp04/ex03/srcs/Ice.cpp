@@ -6,7 +6,7 @@
 /*   By: kearmand <kearmand@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/24 18:03:18 by kearmand          #+#    #+#             */
-/*   Updated: 2025/08/24 19:34:20 by kearmand         ###   ########.fr       */
+/*   Updated: 2025/08/30 18:37:36 by kearmand         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,15 +16,24 @@
 
 
 Ice::Ice() : AMateria("ice") {
-	// std::cout << GREEN << "Ice constructed." << RESET << std::endl;
+	std::cout << E_ICE
+			<< GREEN BOLD "[" UNDERLINE BLUE_SOFT "Ice" RESET NO_UNDERLINE
+			<< GREEN "]" NO_BOLD
+			<< " constructed." << RESET << std::endl;
 }
 
 Ice::Ice(const Ice& other) : AMateria(other) {
-	// std::cout << GREEN << "Ice copy constructor called." << RESET << std::endl;
+	std::cout << E_ICE
+			<< YELLOW BOLD "[" UNDERLINE BLUE_SOFT "Ice" NO_UNDERLINE
+			<< YELLOW "]" NO_BOLD
+			<< " copy constructor called." << RESET << std::endl;
 }
 
 Ice& Ice::operator=(const Ice& other) {
-	// std::cout << GREEN << "Ice assignment operator called." << RESET << std::endl;
+	std::cout << E_ICE
+			<< YELLOW BOLD "[" UNDERLINE BLUE_SOFT "Ice" NO_UNDERLINE
+			<< YELLOW "]" NO_BOLD
+			<< " assignment operator called." << RESET << std::endl;
 	if (this != &other) {
 		AMateria::operator=(other);
 	}
@@ -32,7 +41,10 @@ Ice& Ice::operator=(const Ice& other) {
 }
 
 Ice::~Ice() {
-	// std::cout << RED << "Ice destructed." << RESET << std::endl;
+	std::cout << E_ICE
+			<< RED BOLD "[" UNDERLINE BLUE_SOFT "Ice" NO_UNDERLINE
+			<< RED "]" NO_BOLD
+			<< " destructed." << RESET << std::endl;
 }
 
 AMateria* Ice::clone() const {
@@ -40,5 +52,6 @@ AMateria* Ice::clone() const {
 }
 
 void Ice::use(ICharacter& target) {
-	std::cout << "* shoots an " BOLD BLUE_SOFT "Ice Bolt" RESET " at " << target.getName() << "'s head *" << std::endl;
+	std::cout << E_ICE
+		<< "* shoots an " BOLD BLUE_SOFT "Ice Bolt" RESET " at " << target.getName() << "'s head *" << std::endl;
 }

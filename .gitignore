@@ -1,0 +1,8 @@
+cpp00/.git
+cpp01/.git
+cpp02/.git
+cpp03/.git
+cpp04/.git
+*.o
+*.out
+*.d

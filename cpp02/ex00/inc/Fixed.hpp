@@ -6,7 +6,7 @@
 /*   By: kearmand <kearmand@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/22 23:00:04 by kearmand          #+#    #+#             */
-/*   Updated: 2025/08/22 23:05:53 by kearmand         ###   ########.fr       */
+/*   Updated: 2025/08/29 10:22:27 by kearmand         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,8 +16,8 @@
 # define RED			"\033[31m"				/* Red */
 # define GREEN			"\033[32m"				/* Green */
 # define ORANGE			"\033[93m"				/* Yellow */
-# define YELLOW			"\033[38;5;226m"				/* Bright Blue*/
-# define GREY			"\033[38;5;253m"				/* Grey */
+# define YELLOW			"\033[38;5;226m"		/* Bright Blue*/
+# define GREY			"\033[90m"				/* Grey */
 # define RESET			"\033[0m"				/* Reset color */
 
 class Fixed {
@@ -32,8 +32,8 @@ public:
 
 private:
 	// membres privés
-	int                 _value;
-	static const int    _fractionalBits = 8;
+	int					_value;
+	static const int	_fractionalBits = 8;
 };
 
 #endif // FIXED_HPP

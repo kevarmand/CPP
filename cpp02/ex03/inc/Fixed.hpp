@@ -6,7 +6,7 @@
 /*   By: kearmand <kearmand@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/22 23:00:04 by kearmand          #+#    #+#             */
-/*   Updated: 2025/08/23 12:10:11 by kearmand         ###   ########.fr       */
+/*   Updated: 2025/08/29 19:28:23 by kearmand         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,6 +30,9 @@ public:
 	Fixed(int value);
 	Fixed& operator=(const Fixed& other);
 	~Fixed();
+
+	//utility
+	void print(std::ostream& os) const;
 
 	int getRawBits() const;
 	void setRawBits(int const raw);

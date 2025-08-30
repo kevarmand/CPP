@@ -6,7 +6,7 @@
 /*   By: kearmand <kearmand@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/21 10:30:55 by kearmand          #+#    #+#             */
-/*   Updated: 2025/08/22 12:10:04 by kearmand         ###   ########.fr       */
+/*   Updated: 2025/08/28 08:25:05 by kearmand         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,13 +24,12 @@ int main() {
 	while (true) {
 		std::cout << "Enter command (ADD, SEARCH, EXIT): ";
 
-        if (!std::getline(std::cin, command)) {
-            if (std::cin.eof()) {            // Ctrl+D / EOF
-                std::cout << RED "\nEOF\n" RESET;
-                break;
-            }
-            std::cin.clear();
-            continue;
+		if (!std::getline(std::cin, command)) {
+			if (std::cin.eof()) {
+				std::cout << RED "\nEOF\n" RESET;
+				break;
+			}
+			continue;
 		}
 		if (command == "ADD") {
 			phoneBook.add();

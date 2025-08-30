@@ -6,7 +6,7 @@
 /*   By: kearmand <kearmand@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/23 21:05:13 by kearmand          #+#    #+#             */
-/*   Updated: 2025/08/24 19:35:20 by kearmand         ###   ########.fr       */
+/*   Updated: 2025/08/30 15:12:11 by kearmand         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,9 @@
 # define CLEAR			"\033[2J\033[1;1H"	/* Clear the terminal */
 # define BOLD			"\033[1m"  			/* Bold on */
 # define NO_BOLD			"\033[22m"  		/* <- désactive le bold, conserve la couleur */
-	
+# define UNDERLINE		"\033[4m"  			/* Underline on */
+# define NO_UNDERLINE	"\033[24m" 			/* <- désactive le underline, conserve la couleur */
+#define BLINK			"\033[5m"			// Blink
 
 # define RESET			"\033[0m"				/* Reset */
 # define BLACK			"\033[30m"				/* Black */
@@ -46,5 +48,15 @@
 
 #define BLUE_SOFT     "\033[38;2;120;170;255m"
 #define BOLD_BLUE_SOFT "\033[1m\033[38;2;120;170;255m"
+
+# define E_MS	"📖 "
+# define E_MA	"✨ "
+# define E_ICE	"❄️  "
+# define E_CURE	"💚 "
+# define E_FIRE	"🔥 "
+# define E_EAR	"🪨 "
+# define E_LTG	"⚡ "
+# define E_CHS	"🔮 "
+# define E_CHAR	"🧙 "
 
 #endif /* COLOR_HPP */

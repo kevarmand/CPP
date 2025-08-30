@@ -11,7 +11,7 @@ NAME		:=	sedentaire
 # **************************************************************************** #
 
 CXX			:=	c++
-CXXFLAGS	:=	-Wall -Wextra -Werror -std=c++98
+CXXFLAGS	:=	-Wall -Wextra -Werror -std=c++98 -g
 DEP_FLAGS	:=	-MMD -MP
 RM			:=	rm -rf
 
@@ -47,8 +47,8 @@ ITALIC		:=	\033[3m
 
 # SOURCES #
 SRCS =		main.cpp \
-			FileReplacer.cpp \
-			ReplacerAlgorithm.cpp
+			Replace.cpp
+		
 
 
 # **************************************************************************** #
@@ -58,7 +58,7 @@ SRCS =		main.cpp \
 OBJS_DIR	:=	objs
 SRCS_DIR	:=	srcs
 
-OBJS 		:=	$(SRCS:%.cpp=$(OBJS_DIR)/%.o)
+OBJS 		:=	 $(SRCS:%.cpp=$(OBJS_DIR)/%.o)
 
 DEPS        := $(OBJS:.o=.d)
 
@@ -97,5 +97,13 @@ fclean: clean
 	$(RM) $(NAME)
 
 re: fclean all
+
+# **************************************************************************** #
+#                                     TESTS                                    #
+# **************************************************************************** #
+
+test:
+	export a='\n'
+	./sedentaire Makefile "$$a" "$$a$$a"
 
 .PHONY: all clean fclean re bonus test

@@ -6,7 +6,7 @@
 /*   By: kearmand <kearmand@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/22 23:00:04 by kearmand          #+#    #+#             */
-/*   Updated: 2025/08/23 12:10:11 by kearmand         ###   ########.fr       */
+/*   Updated: 2025/08/29 17:07:38 by kearmand         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@
 # define GREEN			"\033[32m"				/* Green */
 # define ORANGE			"\033[93m"				/* Yellow */
 # define YELLOW			"\033[38;5;226m"				/* Bright Blue*/
-# define GREY			"\033[38;5;253m"				/* Grey */
+# define GREY			"\033[90m"				/* Grey */
 # define RESET			"\033[0m"				/* Reset color */
 
 #include <iostream>
@@ -35,7 +35,10 @@ public:
 	void setRawBits(int const raw);
 	float toFloat() const;
 	int toInt() const;
-
+	
+	//utility
+	void print(std::ostream& os) const;
+	
 	//Comparison operators
 	bool operator>(const Fixed& other) const;
 	bool operator<(const Fixed& other) const;
@@ -61,6 +64,8 @@ public:
 	static const Fixed& min(const Fixed& a, const Fixed& b);
 	static Fixed& max(Fixed& a, Fixed& b);
 	static const Fixed& max(const Fixed& a, const Fixed& b);
+
+	
 
 private:
 	// membres privés

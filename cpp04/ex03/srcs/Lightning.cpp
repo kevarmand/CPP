@@ -6,7 +6,7 @@
 /*   By: kearmand <kearmand@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/24 18:03:18 by kearmand          #+#    #+#             */
-/*   Updated: 2025/08/24 19:36:47 by kearmand         ###   ########.fr       */
+/*   Updated: 2025/08/30 18:38:35 by kearmand         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,15 +16,24 @@
 
 
 Lightning::Lightning() : AMateria("lightning") {
-	// std::cout << GREEN << "Lightning constructed." << RESET << std::endl;
+	std::cout << E_LTG
+			<< GREEN BOLD "[" UNDERLINE YELLOW "Lightning" NO_UNDERLINE
+			<< GREEN "]" NO_BOLD
+			<< " constructed." << RESET << std::endl;
 }
 
 Lightning::Lightning(const Lightning& other) : AMateria(other) {
-	// std::cout << GREEN << "Lightning copy constructor called." << RESET << std::endl;
+	std::cout << E_LTG
+			<< YELLOW BOLD "[" UNDERLINE YELLOW "Lightning" NO_UNDERLINE
+			<< YELLOW "]" NO_BOLD
+			<< " copy constructor called." << RESET << std::endl;
 }
 
 Lightning& Lightning::operator=(const Lightning& other) {
-	// std::cout << GREEN << "Lightning assignment operator called." << RESET << std::endl;
+	std::cout << E_LTG
+			<< YELLOW BOLD "[" UNDERLINE YELLOW "Lightning" NO_UNDERLINE
+			<< YELLOW "]" NO_BOLD
+			<< " assignment operator called." << RESET << std::endl;
 	if (this != &other) {
 		AMateria::operator=(other);
 	}
@@ -32,7 +41,10 @@ Lightning& Lightning::operator=(const Lightning& other) {
 }
 
 Lightning::~Lightning() {
-	// std::cout << RED << "Lightning destructed." << RESET << std::endl;
+	std::cout << E_LTG
+			<< RED BOLD "[" UNDERLINE YELLOW "Lightning" NO_UNDERLINE
+			<< RED "]" NO_BOLD
+			<< " destructed." << RESET << std::endl;
 }
 
 AMateria* Lightning::clone() const {
@@ -40,5 +52,6 @@ AMateria* Lightning::clone() const {
 }
 //* storms converge — lightning strikes <name> with blinding flash *
 void Lightning::use(ICharacter& target) {
-	std::cout << "* storms converge — " BOLD YELLOW "lightning" RESET " strikes " << target.getName() << " with blinding flash *" << std::endl;
+	std::cout << E_LTG
+		<< "* storms converge — " BOLD YELLOW "lightning" RESET " strikes " << target.getName() << " with blinding flash *" << std::endl;
 }

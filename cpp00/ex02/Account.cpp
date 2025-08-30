@@ -6,7 +6,7 @@
 /*   By: kearmand <kearmand@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/22 12:30:06 by kearmand          #+#    #+#             */
-/*   Updated: 2025/08/22 13:25:49 by kearmand         ###   ########.fr       */
+/*   Updated: 2025/08/28 08:36:10 by kearmand         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,7 +51,7 @@ Account::~Account( void )
 
 void Account::_displayTimestamp( void )
 {
-	//TEST FOR CORRECTION
+	// TEST FOR CORRECTION
 	// std::cout << "[19920104_091532] ";
 
 	
